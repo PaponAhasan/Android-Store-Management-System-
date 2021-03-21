@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+      <item android:title="Details"
+          app:showAsAction="never"
+          android:icon="@drawable/ic_baseline_person"
+          android:id="@+id/item_details"/>
+    <item android:title="Edit"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_baseline_edit"
+        android:id="@+id/item_edit"/>
+    <item android:title="Delete"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_baseline_delete"
+        android:id="@+id/item_delete"/>
+</menu>

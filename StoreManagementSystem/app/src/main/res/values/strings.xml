@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Store</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="LoginText">Login Page</string>
+    <string name="SignUpText">Signup Page</string>
+    <string name="SignUpPermission">Have not any accounnt? Signup</string>
+</resources>

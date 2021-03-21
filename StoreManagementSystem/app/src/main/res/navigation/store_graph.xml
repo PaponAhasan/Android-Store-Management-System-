@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/store_graph"
+    app:startDestination="@id/loginPage">
+
+    <fragment
+        android:id="@+id/loginPage"
+        android:name="com.example.storemanagementsystem.LoginPage"
+        android:label="@string/LoginText"
+        tools:layout="@layout/fragment_login_page" >
+        <action
+            android:id="@+id/action_loginPage_to_dashboard"
+            app:destination="@id/dashboard"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/loginPage"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginPage_to_signUpPage"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:destination="@id/signUpPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboard"
+        android:name="com.example.storemanagementsystem.Dashboard"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboard_to_vendorList"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:destination="@id/vendorList" />
+        <action
+            android:id="@+id/action_dashboard_to_loginPage"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:destination="@id/loginPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/addVendor"
+        android:name="com.example.storemanagementsystem.vendor.AddVendor"
+        android:label="Add/Edit Vendor"
+        tools:layout="@layout/fragment_add_vendor" >
+        <action
+            android:id="@+id/action_addVendor_to_vendorList"
+            app:destination="@id/vendorList"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/dashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/vendorList"
+        android:name="com.example.storemanagementsystem.vendor.VendorList"
+        android:label="Vendor List"
+        tools:layout="@layout/fragment_vendor_list" >
+        <action
+            android:id="@+id/action_vendorList_to_addVendor"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:destination="@id/addVendor" />
+        <action
+            android:id="@+id/action_vendorList_to_vendorDetails"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:destination="@id/vendorDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/vendorHistory"
+        android:name="com.example.storemanagementsystem.vendor.VendorHistory"
+        android:label="Vendor History"
+        tools:layout="@layout/fragment_vendor_history" />
+    <fragment
+        android:id="@+id/vendorDetails"
+        android:name="com.example.storemanagementsystem.vendor.VendorDetails"
+        android:label="Vendor Detail"
+        tools:layout="@layout/fragment_vendor_details" >
+        <action
+            android:id="@+id/action_vendorDetails_to_send_Email"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:destination="@id/send_Email" />
+        <action
+            android:id="@+id/action_vendorDetails_to_send_SMS"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:destination="@id/send_SMS" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpPage"
+        android:name="com.example.storemanagementsystem.SignUpPage"
+        android:label="SignUp Page"
+        tools:layout="@layout/fragment_sign_up_page" >
+        <action
+            android:id="@+id/action_signUpPage_to_loginPage"
+            app:enterAnim="@anim/fui_slide_in_right"
+            app:exitAnim="@anim/fui_slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:destination="@id/loginPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/send_Email"
+        android:name="com.example.storemanagementsystem.Send_Email"
+        android:label="Send Email"
+        tools:layout="@layout/fragment_send__email" />
+    <fragment
+        android:id="@+id/send_SMS"
+        android:name="com.example.storemanagementsystem.Send_SMS"
+        android:label="Send SMS"
+        tools:layout="@layout/fragment_send__s_m_s" />
+    <fragment
+        android:id="@+id/store_Dashboard"
+        android:name="com.example.storemanagementsystem.Store_Dashboard"
+        android:label="fragment_store__dashboard"
+        tools:layout="@layout/fragment_store__dashboard" />
+</navigation>
